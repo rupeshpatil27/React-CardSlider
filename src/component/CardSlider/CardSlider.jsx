@@ -6,7 +6,6 @@ import {
   MdArrowBackIos,
 } from "react-icons/md";
 
-import Card from "../Card/Card";
 
 const CardSlider = ({
   cardSliderTitle = "",
@@ -81,7 +80,19 @@ const CardSlider = ({
             onScroll={handleSlideButton}
           >
             {data.map((item, index) => (
-              <Card key={index} item={item} />
+
+              <div className="card-wrapper" key={index}>
+                <div className="card">
+                  <div className="image">
+                    <img src={item.img} draggable="false" />
+                  </div>
+                  <div className="info">
+                    <span className="title">{item.title}</span>
+                    <span className="name">{item.name}</span>
+                  </div>
+                </div>
+              </div>
+
             ))}
           </div>
 
